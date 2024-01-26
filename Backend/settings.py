@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'Business',
     'locations',
     'profiles',
+    'accounts',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

@@ -18,12 +18,12 @@ def get_business(request, name=None):
     try:
         user = request.user
         profile = Profile.objects.get(user=user)
-        
+
         if name:
             businesses = Business.objects.filter(Q(name__iexact=name) & Q(owner=profile))
         else:
             businesses = Business.objects.filter(owner=profile)
-        
+
         serializer = BusinessSerializer(businesses, many=True)
         return Response(serializer.data)
     except Business.DoesNotExist:
